@@ -1,0 +1,27 @@
+{
+  "name": "ImageHolder",
+  "version": "0.0.1",
+  "description": "Making place images for FE develop",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node-dev server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fh250250/ImageHolder.git"
+  },
+  "keywords": [],
+  "author": "Gasper Duan <duanpengyuan@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fh250250/ImageHolder/issues"
+  },
+  "homepage": "https://github.com/fh250250/ImageHolder#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gm": "^1.22.0"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
+  }
+}
