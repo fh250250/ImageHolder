@@ -6,17 +6,17 @@ const gm = require('gm')
 const PORT = 9000
 const app = express()
 
-app.get('/:width(\\d+)x:height(\\d+)', (req, res) => {
+app.get('/:width(\\d+)(x:height(\\d+))?', (req, res) => {
   res.type('png')
 
   let width = parseInt(req.params.width)
-  let height = parseInt(req.params.height)
+  let height = req.params.height ? parseInt(req.params.height) : width
   let text = `${width}x${height}`
-  let fontSize = width * 0.4 / text.length
 
-  gm(width, height, '#eee')
-    .fontSize(fontSize)
-    .drawText(width * 0.3, height * 0.5 - fontSize / 2, text)
+  gm(width, height, '#ccc')
+    .fontSize(width / text.length)
+    .fill('#fff')
+    .drawText(0, 0, text, 'center')
     .stream('png')
     .pipe(res)
 })
